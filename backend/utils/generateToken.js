@@ -1,0 +1,9 @@
+var jwt = require("jsonwebtoken")
+
+const genarateToken = (id) => {
+    return jwt.sign({ id }, process.env.JWT_TOKEN, {
+        expiresIn: '30d'
+    })
+}
+
+module.exports = genarateToken
